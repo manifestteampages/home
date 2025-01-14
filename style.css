@@ -1,0 +1,489 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    background-image: url(./test3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+/* Estilos do menu de navegação */
+nav {
+    background: linear-gradient(to bottom, #000000, rgba(51, 51, 51, 0));
+    color: #fff;
+    padding:12px 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0% 0%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f4eeee;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: block;
+    transition: all 0.5s ease;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    background-color: #3f3f3f9c;
+    border-radius: 5px;
+}
+
+nav ul li ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #4444445a;
+    padding: 5px 0;
+    border-radius: 5px;
+    display: none;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(245, 245, 246, 0.488);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    text-align: center;
+}
+
+nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+nav ul li ul li a:hover {
+    background-color: #07070715;
+    color: #141414;
+    border-radius: 10px;
+}
+
+/* Estilos para a barra lateral (sidenav) */
+.sidenav {
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #3e3e3e;
+    padding-top: 20px;
+    background: linear-gradient(to right, #000000, rgba(51, 51, 51, 0));
+    color: #fff;
+    text-align: center;
+    z-index: 1002;
+    font-weight: bold;
+}
+
+.sidenav h2 {
+    color: white;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    padding: 8px;
+}
+
+.sidenav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.sidenav ul li a:hover {
+    color: #f2f1f1;
+    box-shadow: 0 4px 6px rgba(245, 245, 246, 0.488);
+    cursor: pointer;
+}
+
+/* Estilos para os detalhes dos contatos */
+.dropdown {
+    position: relative; /* Torna o item "Contatos RFB" o contexto de posicionamento para o dropdown */
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 0; /* Alinha com o topo do elemento pai */
+    left: 100%; /* Posiciona à direita do elemento pai */
+    display: none;
+    background-color: rgba(90, 88, 88, 0.407);
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.dropdown-content li {
+    padding: 10px 15px;
+    cursor: pointer;
+
+}
+.dropdown .dropdown-content li{
+    text-align: center;
+}
+
+.dropdown-content:hover {
+    background-color: #3f3f3f9c;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(245, 245, 246, 0.488);
+}
+
+/* Estilos para as janelas de conteúdo (content) */
+.content {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(245, 245, 246, 0.488);
+    width: 80vw;
+    text-align: center;
+    z-index: 1000;
+
+    word-wrap: break-word; /* Garante quebra de palavras longas */
+    overflow-wrap: break-word; /* Compatibilidade adicional */
+    white-space: normal; /* Permite quebras de linha normais */
+}
+
+.content p {
+    margin-bottom: 15px;
+}
+.content p b{
+    color: #0df3f3;
+    font-weight: bolder;
+}
+.content h3{
+    color: #03b4fa;
+    font-weight: bolder;
+    box-shadow: white;
+}
+/* Estilos para o overlay de fundo */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+/* Ajuste para prevenir mudança no layout */
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-content li:hover {
+    background-color: #07070715;
+    color: #0d0d0d;
+    border-radius: 15px;
+}
+
+
+nav .apdata a{
+color: #dae6e7;
+box-shadow: #3327a4;
+}
+nav .apdata a:hover{
+    color: #00166f;
+    background-color: rgba(237, 229, 229, 0.348);
+    }
+
+
+/* text area */
+
+.notepad-container {
+    background-color: #ffffff4b;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(16, 67, 206, 0.436);
+    width: 90%;
+    text-align: center;
+    position: absolute  ;
+    left: 50%; 
+    transform: translate(-50%, -30%); /* Mantém a centralização */
+    max-height: 100%;
+    margin-top: 850px;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 1024px) {
+    .notepad-container {
+        width: 80%; /* Ajusta a largura para telas de notebooks */
+        margin-top: 600px; /* Ajusta a margem para um posicionamento melhor */
+    }
+}
+
+@media (max-width: 768px) {
+    .notepad-container {
+        width: 95%; /* Para telas muito pequenas */
+        margin-top: 500px; /* Ajusta ainda mais o posicionamento */
+    }
+}
+
+
+.notepad-container h2 {
+    color: #000000;
+    background-color: rgba(73, 69, 69, 0.833);
+    border-radius: 20px 20px 0px 0px
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid #cccccc57;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #0c13eceb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+.notes-list {
+    text-align: left;
+    flex-grow: 1; /* Faz com que a lista cresça e ocupe o espaço disponível */
+}
+
+.notes-list h3 {
+    color: #f8f4f4;
+}
+
+
+ul#savedNotes {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#savedNotes li {
+    background-color: #f1f1f180;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    font-weight: bolder;
+}
+
+ul#savedNotes li button {
+    background-color: #f44336;
+    padding: 5px 10px;
+    border: none;
+    color: rgb(12, 12, 12);
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bolder;
+}
+
+ul#savedNotes li button:hover {
+    background-color: #e53935;
+}
+
+.notecontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center; /* Centraliza o texto dentro dos elementos */
+    margin: 10px 0; /* Adiciona espaço entre as anotações */
+    padding: 10px;
+    border: 1px solid #ddd; /* Opcional: borda para destacar as anotações */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #f9f9f965; /* Cor de fundo */
+    min-width: 100%;
+}
+
+
+.message {
+    animation: backgroundColorChange 1s infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #ffffff0b;
+    padding: 20px;
+    z-index: 9999; /* Garante que a mensagem fique acima de outros elementos */
+    font-weight: bolder;
+    color: white;
+    border-radius: 180px;
+    box-shadow: 0 4px 6px rgba(245, 245, 246, 0.488);
+
+}
+
+
+/* body .centro {
+    animation: backgroundColorChange 10s infinite;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(16, 67, 206, 0.436);
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    position: absolute; 
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /
+    list-style: none;
+    opacity: 90%;
+    color: #fff; 
+} */
+
+/* Animação de transição de cor com gradiente circular e suavização */
+@keyframes backgroundColorChange {
+    0% {
+        background-image: radial-gradient(circle, rgba(194, 16, 16, 0.9) 0%, rgb(51, 0, 255) 70%);
+    }
+    25% {
+        background-image: radial-gradient(circle, rgba(2, 13, 171, 0.9) 0%, rgb(197, 1, 1) 70%);
+    }
+    50% {
+        background-image: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(14, 13, 13) 70%);
+    }
+    75% {
+        background-image: radial-gradient(circle, rgba(17, 17, 16, 0.9) 0%, rgb(239, 243, 5) 70%);
+    }
+    100% {
+        background-image: radial-gradient(circle, rgba(239, 235, 12, 0.9) 0%, rgb(194, 16, 16, 0.9) 70%);
+    }
+}
+
+
+
+
+/* Responsividade */
+
+/* Dispositivos pequenos (smartphones) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .sidenav {
+        width: 60px;
+    }
+
+    .sidenav ul li {
+        padding: 5px;
+    }
+
+    .notepad-container {
+        width: 95%;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .content {
+        width: 90vw;
+    }
+
+    .notes-list {
+        text-align: left;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+}
+
+/* Dispositivos médios (tablets) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .sidenav {
+        width: 120px;
+    }
+
+    .sidenav ul li {
+        padding: 10px;
+    }
+
+    .notepad-container {
+        width: 80%;
+    }
+
+    .content {
+        width: 70vw;
+    }
+}
+
